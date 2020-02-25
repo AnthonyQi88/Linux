@@ -2,7 +2,7 @@
 ```
 This is my linux learning corner. 
 ```
-![Image of penguin.](https://raw.githubusercontent.com/AnthonyQi88/Linux/master/penguin.jpg)
+![Image of penguin.](https://github.com/AnthonyQi88/Linux/blob/master/Images/penguin.jpg)
 
 
 
