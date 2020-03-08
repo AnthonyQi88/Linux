@@ -4,7 +4,7 @@
 0001|连续输出a-g,1-10
 0002|对于连续数组中的数字，输出偶数。 
 0003|随机生成10个数，并筛选出最大值
-
+0004|定义一个数组，数组中的元素是var/log/目录下所有以.log结尾的文件的名称；统计其下标为偶数的文件中的行数之和
 
 # 实验内容
 ## 0001 实现连续输出
@@ -44,3 +44,28 @@ done
 
 echo "MAX_NUM: $max"
 ```
+### 0004 定义一个数组，数组中的元素是var/log/目录下所有以.log结尾的文件的名称；统计其下标为偶数的文件中的行数之和
+```shell
+declare -a files
+files=(/var/log/*.log)
+
+declare -i lines=0
+
+for i in $(seq 0 $[${#files[@]}-1]);do
+    if [ $[$i%2] -eq 0 ];then
+        let lines+=$(wc -l ${files[$i]} | cut -d' ' -f1)
+    fi
+done
+echo "Lines: $lines"
+```
+
+
+
+
+
+
+
+
+
+
+
