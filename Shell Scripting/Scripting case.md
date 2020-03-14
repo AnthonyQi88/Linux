@@ -5,6 +5,9 @@
 0002|对于连续数组中的数字，输出偶数。 
 0003|随机生成10个数，并筛选出最大值
 0004|定义一个数组，数组中的元素是var/log/目录下所有以.log结尾的文件的名称；统计其下标为偶数的文件中的行数之和
+0005|写一个函数可以计算加减乘
+
+
 
 # 实验内容
 ## 0001 实现连续输出
@@ -44,7 +47,7 @@ done
 
 echo "MAX_NUM: $max"
 ```
-### 0004 定义一个数组，数组中的元素是var/log/目录下所有以.log结尾的文件的名称；统计其下标为偶数的文件中的行数之和
+## 0004 定义一个数组，数组中的元素是var/log/目录下所有以.log结尾的文件的名称；统计其下标为偶数的文件中的行数之和
 ```shell
 declare -a files
 files=(/var/log/*.log)
@@ -58,9 +61,26 @@ for i in $(seq 0 $[${#files[@]}-1]);do
 done
 echo "Lines: $lines"
 ```
+## 0005 写一个函数 - Write a function called ENGLISH_CALC which can process sentences such as:'3 plus 5', '5 minus 1' or '4 times 6' and print the results as: '3 + 5 = 8', '5 - 1 = 4' or '4 * 6 = 24' respectively. 
+```shell
+function ENGLISH_CALC {
+  a=$1
+  b=$3
+  signn=$2
+  if [ $signn == "plus" ]; then
+    echo "$a + $b = $(($a+$b))"
+  elif [ $signn == "minus" ]; then
+    echo "$a - $b = $(($a-$b))"
+  elif [ $signn == "times" ]; then
+    echo "$a * $b = $(($a*$b))"
+  fi
+}
 
-
-
+# testing code
+ENGLISH_CALC 3 plus 5
+ENGLISH_CALC 5 minus 1
+ENGLISH_CALC 4 times 6
+```
 
 
 
