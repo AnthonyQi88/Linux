@@ -3,7 +3,7 @@
 # コマンド簡単説明
 番号|コマンド
 ---|---
-0001| wc
+0001| [wc](https://github.com/AnthonyQi88/Linux#0001-wc)
 0002| cut
 
 
